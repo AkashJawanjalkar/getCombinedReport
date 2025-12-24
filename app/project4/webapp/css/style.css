@@ -1,0 +1,14 @@
+/* Hide icons for all buttons */
+.sapMBtn .sapMBtnIcon {
+    display: none;
+}
+
+/* BUT keep icon for settings button */
+.keepIcon .sapMBtnIcon {
+    display: inline-flex !important;
+}
+
+
+
+
+

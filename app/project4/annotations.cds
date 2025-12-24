@@ -1,0 +1,1 @@
+using AccessService as service from '../../srv/service';

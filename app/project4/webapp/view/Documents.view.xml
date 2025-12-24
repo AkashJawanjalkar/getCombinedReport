@@ -1,0 +1,2372 @@
+<mvc:View
+    controllerName="project4.controller.Documents"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table"
+    displayBlock="true"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Page
+        id="docPage"
+        title="Documents"
+        class="sapUiResponsiveContentPadding"
+    >
+        <content>
+            <!-- Top Tabs (All Documents / Error / In Process / Completed) -->
+            <IconTabBar
+                id="itbDocs"
+                expandable="false"
+                class="sapUiSmallMarginBottom"
+            >
+                <items>
+                    <IconTabFilter
+                        key="ALL"
+                        text="All Documents (0)"
+                    />
+                    <IconTabFilter
+                        key="ERR"
+                        text="Error (0)"
+                    />
+                    <IconTabFilter
+                        key="PROC"
+                        text="In Process (0)"
+                    />
+                    <IconTabFilter
+                        key="COMP"
+                        text="Completed (0)"
+                    />
+                </items>
+            </IconTabBar>
+
+            <VBox fitContainer="true">
+                <Panel>
+                    <!-- FilterBar row -->
+                    <fb:FilterBar
+                        id="filterBar"
+                        showGoOnFB="true"
+                        showFilterConfiguration="true"
+                        search="onSearch"
+                    >
+                        <fb:filterItems />
+                    </fb:FilterBar>
+                </Panel>
+
+                <Panel
+                    class="sapUiSmallMarginTop"
+                    id="filtersection"
+                    visible="true"
+                    width="100%"
+                >
+                    <OverflowToolbar>
+                        <Title
+                            text="{= 'Line Items (' + ${docs>/nDataLength} + ')' }"
+                        />
+                        <ToolbarSpacer />
+
+                        <Button
+                            text="Submit"
+                            type="Success"
+                            press=".onSubmit"
+                        />
+                        <Button
+                            text="Cancel Edocument"
+                            type="Reject"
+                            press=".onCancelEdocument"
+                        />
+                        <Button
+                            text="Update Vehicle Details"
+                            type="Attention"
+                            press=".onUpdateVehicleDetails"
+                        />
+                        <Button
+                            text="Update Transporter Details"
+                            type="Accept"
+                            press=".onUpdateTransporterDetails"
+                        />
+                        <Button
+                            text="Extend Validity"
+                            type="Ghost"
+                            press=".onExtendValidity"
+                        />
+                        <Button
+                            text="Reject"
+                            type="Reject"
+                            press=".onReject"
+                        />
+                        <Button
+                            text="Status"
+                            type="Ghost"
+                            press=".onStatus"
+                        />
+                        <Button
+                            text="Display"
+                            type="Neutral"
+                            press=".onDisplay"
+                        />
+                        <Button
+                            icon="sap-icon://action-settings"
+                            type="Ghost"
+                            class="keepIcon"
+                            press=".onOpenPersonalization"
+                        />
+                    </OverflowToolbar>
+
+                    <table:Table
+                        id="lineItemsTable"
+                        rows="{docs>/oModel}"
+                        visibleRowCount="10"
+                        selectionMode="None"
+                        enableColumnReordering="true"
+                        enableColumnFreeze="true"
+                        enableCellFilter="true"
+                        width="100%"
+                    >
+                        <table:columns>
+                            <table:Column
+                                width="50px"
+                                visible="true"
+                            >
+                                <Label text="Eway" />
+                                <table:template>
+                                    <CheckBox />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="80px"
+                                visible="true"
+                            >
+                                <Label text="Einvoice" />
+                                <table:template>
+                                    <CheckBox />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="150px"
+                                visible="true"
+                                filterProperty="document_companycode"
+                                sortProperty="document_companycode"
+                            >
+                                <Label text="Company Code" />
+                                <table:template>
+                                    <Text text="{docs>document_companycode}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="true"
+                            >
+                                <Label text="Document Type" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>transaction_details_BillingDocumentType}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="true"
+                            >
+                                <Label text="Document Number" />
+                                <table:template>
+                                    <Text text="{docs>document_number}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="true"
+                            >
+                                <Label text="Document Date" />
+                                <table:template>
+                                    <Text
+                                        text="{path: 'docs>document_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="true"
+                            >
+                                <Label text="Accounting Document" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>document_AccountingDocument}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="130px"
+                                visible="true"
+                            >
+                                <Label text="Fiscal Year" />
+                                <table:template>
+                                    <Text text="{docs>document_FiscalYear}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="true"
+                            >
+                                <Label text="Billing Cancelled?" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>document_BillingDocumentIsCancelled}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="true"
+                            >
+                                <Label text="Cancelled Billing Doc" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>document_CancelledBillingDocument}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="true"
+                            >
+                                <Label text="Buyer Legal Name" />
+                                <table:template>
+                                    <Text text="{docs>buyer_legal_name}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="true"
+                            >
+                                <Label text="Buyer Trade Name" />
+                                <table:template>
+                                    <Text text="{docs>buyer_trade_name}" />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- /////////////////// -->
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                                filterProperty="additional_supporting_document_url"
+                                sortProperty="additional_supporting_document_url"
+                            >
+                                <Label text="Supporting Doc URL" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>additional_supporting_document_url}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                                filterProperty="additional_supporting_document"
+                                sortProperty="additional_supporting_document"
+                            >
+                                <Label text="Supporting Document" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>additional_supporting_document}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                                filterProperty="additional_information"
+                                sortProperty="additional_information"
+                            >
+                                <Label text="Additional Info" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>additional_information}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Batch -->
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="Batch Name" />
+                                <table:template>
+                                    <Text text="{docs>batch_name}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Batch Warranty Date" />
+                                <table:template>
+                                    <Text
+                                        text="{path: 'docs>batch_warranty_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Batch Expiry Date" />
+                                <table:template>
+                                    <Text
+                                        text="{path: 'docs>batch_expiry_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Buyer -->
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Buyer GSTIN" />
+                                <table:template>
+                                    <Text text="{docs>buyer_gstin}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="Place of Supply" />
+                                <table:template>
+                                    <Text text="{docs>buyer_place_of_supply}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Buyer Address 1" />
+                                <table:template>
+                                    <Text text="{docs>buyer_address1}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Buyer Address 2" />
+                                <table:template>
+                                    <Text text="{docs>buyer_address2}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Buyer Location" />
+                                <table:template>
+                                    <Text text="{docs>buyer_location}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="120px"
+                                visible="false"
+                            >
+                                <Label text="Buyer Pincode" />
+                                <table:template>
+                                    <Text text="{docs>buyer_pincode}" />
+                                </table:template>
+                            </table:Column>
+                            <!-- Buyer State -->
+                            <table:Column
+                                width="120px"
+                                visible="false"
+                            >
+                                <Label text="Buyer State Code" />
+                                <table:template>
+                                    <Text text="{docs>buyer_state_code}" />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Buyer Phone -->
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Buyer Phone Number" />
+                                <table:template>
+                                    <Text text="{docs>buyer_phone_number}" />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Buyer Email -->
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Buyer Email" />
+                                <table:template>
+                                    <Text text="{docs>buyer_email}" />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Cancel E-Invoice -->
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Cancel E-Invoice IRN" />
+                                <table:template>
+                                    <Text text="{docs>cancel_einvoice_irn}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Cancel Reason" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>cancel_einvoice_cancel_reason}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="240px"
+                                visible="false"
+                            >
+                                <Label text="Cancel Remarks" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>cancel_einvoice_cancel_remarks}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="E-Invoice Cancel Flag" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>cancel_einvoice_ewaybill_cancel}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Cancel E-Way Bill -->
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Bill No (Cancelled)" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>cancel_eway_bill_eway_bill_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="240px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Cancel Reason" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>cancel_eway_bill_reason_of_cancel}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="240px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Cancel Remark" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>cancel_eway_bill_cancel_remark}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Cancel Data Source" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>cancel_eway_bill_data_source}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Project Reference No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>contact_details_project_reference_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Receipt Advice No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>contact_details_receipt_advice_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Receipt Advice Date" />
+                                <table:template>
+                                    <!-- <Text
+                                text="{docs>contact_details_receipt_advice_date}"
+                                
+                            /> -->
+
+                                    <Text
+                                        text="{path: 'docs>contact_details_receipt_advice_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Batch Reference No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>contact_details_batch_reference_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Contract Reference No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>contact_details_contract_reference_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Other Reference" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>contact_details_other_reference}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Vendor PO Reference No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>contact_details_vendor_po_reference_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Vendor PO Date" />
+                                <table:template>
+                                    <!-- <Text
+                                text="{docs>contact_details_vendor_po_reference_date}"
+                            /> -->
+
+                                    <Text
+                                        text="{path: 'docs>contact_details_vendor_po_reference_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Dispatch Company Name" />
+                                <table:template>
+                                    <Text text="{docs>dispatch_company_name}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="360px"
+                                visible="false"
+                            >
+                                <Label text="Dispatch Address Line 1" />
+                                <table:template>
+                                    <Text text="{docs>dispatch_address1}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Dispatch Address Line 2" />
+                                <table:template>
+                                    <Text text="{docs>dispatch_address2}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Dispatch Location" />
+                                <table:template>
+                                    <Text text="{docs>dispatch_location}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Dispatch Pincode" />
+                                <table:template>
+                                    <Text text="{docs>dispatch_pincode}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Dispatch State Code" />
+                                <table:template>
+                                    <Text text="{docs>dispatch_state_code}" />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- E-Invoice -->
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="E-Invoice Success Code" />
+                                <table:template>
+                                    <Text text="{docs>einvoice_success_code}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="E-Invoice NIC Code" />
+                                <table:template>
+                                    <Text text="{docs>einvoice_nic_code}" />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- E-Way Bill -->
+                            <table:Column
+                                width="150px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Status" />
+                                <table:template>
+                                    <Text text="{docs>ewaybill_Status}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Code" />
+                                <table:template>
+                                    <Text text="{docs>ewaybill_code}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Transporter ID" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_transporter_id}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Transporter Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_transporter_name}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Transport Mode" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_transportation_mode}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Transport Distance" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_transportation_distance}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Transport Doc No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_transporter_document_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Transport Doc Date" />
+                                <table:template>
+                                    <!-- <Text
+                                text="{docs>ewaybill_details_transporter_document_date}"
+                            /> -->
+
+                                    <Text
+                                        text="{path: 'docs>ewaybill_details_transporter_document_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Vehicle Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_vehicle_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Vehicle Type" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_vehicle_type}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Sub Supply Type" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_sub_supply_type}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Consignor -->
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Consignor GSTIN" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_gstin_of_consignor}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="240px"
+                                visible="false"
+                            >
+                                <Label text="Consignor Legal Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_legal_name_of_consignor}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Consignor Address 1" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_address1_of_consignor}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Consignor Address 2" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_address2_of_consignor}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Consignor Pincode" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_pincode_of_consignor}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Consignee -->
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Consignee GSTIN" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_gstin_of_consignee}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="240px"
+                                visible="false"
+                            >
+                                <Label text="Consignee Legal Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_legal_name_of_consignee}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Consignee Address 1" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_address1_of_consignee}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="260px"
+                                visible="false"
+                            >
+                                <Label text="Consignee Address 2" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_address2_of_consignee}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Consignee Place" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_place_of_consignee}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Consignee Pincode" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_pincode_of_consignee}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="State of Supply" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_state_of_supply}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Product Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_product_name}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Unit of Product" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_unit_of_product}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="120px"
+                                visible="false"
+                            >
+                                <Label text="CGST Rate" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_cgst_rate}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="120px"
+                                visible="false"
+                            >
+                                <Label text="SGST Rate" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_sgst_rate}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="120px"
+                                visible="false"
+                            >
+                                <Label text="IGST Rate" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_igst_rate}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="120px"
+                                visible="false"
+                            >
+                                <Label text="CESS Rate" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_cess_rate}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Bill No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_ewayBillNo}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Bill Date" />
+                                <table:template>
+                                    <!-- <Text text="{docs>ewaybill_details_ewayBillDate}" /> -->
+
+                                    <Text
+                                        text="{path: 'docs>ewaybill_details_ewayBillDate', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Mode of Transport" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_mode_of_transport}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Group Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_group_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Remaining Distance" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_remaining_distance}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Place of Consignor" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_place_of_consignor}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label
+                                    text="Reason Code for Vehicle Updation"
+                                />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_reason_code_for_vehicle_updation}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Reason for Vehicle Updation" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_reason_for_vehicle_updation}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="State of Consignor" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_state_of_consignor}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Old Vehicle Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_old_vehicle_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="New Vehicle Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_new_vehicle_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Old Transporter Doc Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_old_transporter_document_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="New Transporter Doc Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_new_transporter_document_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Taxable Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ewaybill_details_taxable_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Ship Bill Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>export_details_ship_bill_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Ship Bill Date" />
+                                <table:template>
+                                    <Text
+                                        text="{path: 'docs>export_details_ship_bill_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Port Code" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>export_details_port_code}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Refund Claim" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>export_details_refund_claim}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Foreign Currency" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>export_details_foreign_currency}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Country Code" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>export_details_country_code}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Export Duty" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>export_details_export_duty}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Ack No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>get_invoice_details_AckNo}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Ack Date" />
+                                <table:template>
+                                    <!-- <Text text="{docs>get_invoice_details_AckDt}" /> -->
+                                    <Text
+                                        text="{path: 'docs>get_invoice_details_AckDt', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Status" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>get_eway_bill_details_status}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Bill No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>get_eway_bill_details_ewbno}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Bill Date" />
+                                <table:template>
+                                    <!-- <Text text="{docs>get_eway_bill_details_ewbdt}" /> -->
+                                    <Text
+                                        text="{path: 'docs>get_eway_bill_details_ewbdt', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Bill Valid Till" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>get_eway_bill_details_ewbvalidtill}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Error Message" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>get_eway_bill_details_errorMessage}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Failed Status" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>get_eway_bill_details_failed_status}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="E-Way Code" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>get_eway_bill_details_code}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Item List Columns -->
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Item Serial No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_item_serial_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Product Code" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_product_code}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Product Description" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_product_description}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="Is Service" />
+                                <table:template>
+                                    <Text text="{docs>item_list_is_service}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="HSN Code" />
+                                <table:template>
+                                    <Text text="{docs>item_list_hsn_code}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Bar Code" />
+                                <table:template>
+                                    <Text text="{docs>item_list_bar_code}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Quantity" />
+                                <table:template>
+                                    <Text text="{docs>item_list_quantity}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Free Quantity" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_free_quantity}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Unit" />
+                                <table:template>
+                                    <Text text="{docs>item_list_unit}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Unit Price" />
+                                <table:template>
+                                    <Text text="{docs>item_list_unit_price}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Total Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_total_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="Discount" />
+                                <table:template>
+                                    <Text text="{docs>item_list_discount}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Pre-Tax Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_pre_tax_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Other Charge" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_other_charge}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Assessable Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_assessable_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                            <!-- Item List GST & Taxes -->
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="GST Rate" />
+                                <table:template>
+                                    <Text text="{docs>item_list_gst_rate}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="IGST Amount" />
+                                <table:template>
+                                    <Text text="{docs>item_list_igst_amount}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="CGST Amount" />
+                                <table:template>
+                                    <Text text="{docs>item_list_cgst_amount}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="SGST Amount" />
+                                <table:template>
+                                    <Text text="{docs>item_list_sgst_amount}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Cess Non-Advol Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_cess_nonadvol_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Cess Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_cess_cess_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="State Cess Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_cess_state_cess_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="State Cess Non-Advol Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_cess_state_cess_nonadvol_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Item List References -->
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Order Line Reference" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_order_line_reference}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Country of Origin" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_country_origin}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Product Serial No" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_product_serial_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Attribute Details" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_attribute_details}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Attribute Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_attribute_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Total Item Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>item_list_total_item_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Payment Details -->
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Bank Account Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_bank_account_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Paid Balance Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_paid_balance_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="Credit Days" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_credit_days}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Direct Debit" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_direct_debit}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Credit Transfer" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_credit_transfer}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="140px"
+                                visible="false"
+                            >
+                                <Label text="Branch" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_branch}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                            <!-- Payment Details Continued -->
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Payment Mode" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_payment_mode}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Payee Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_payee_name}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Payment Instruction" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_payment_instruction}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Outstanding Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_outstanding_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Payment Term" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>payment_details_payment_term}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Preceding Document Details -->
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Reference of Original Invoice" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>preceding_document_details_reference_of_original_invoice}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Preceding Invoice Date" />
+                                <table:template>
+                                    <!--    <Text text="{docs>preceding_document_details_preceding_invoice_date}"/> -->
+                                    <Text
+                                        text="{path: 'docs>preceding_document_details_preceding_invoice_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Other Reference (Preceding)" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>preceding_document_details_other_reference}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Reference Details -->
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Other Reference" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>reference_details_other_reference}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Invoice Period Start" />
+                                <table:template>
+                                    <!-- <Text
+                                text="{docs>reference_details_invoice_period_start_date}"
+                            /> -->
+
+                                    <Text
+                                        text="{path: 'docs>reference_details_invoice_period_start_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Invoice Period End" />
+                                <table:template>
+                                    <!-- <Text
+                                text="{docs>reference_details_invoice_period_end_date}"
+                            /> -->
+                                    <Text
+                                        text="{path: 'docs>reference_details_invoice_period_end_date', formatter: '.formatDate'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Invoice Reference Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>reference_details_invoice_reference_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Invoice Remarks" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>reference_details_invoice_remarks}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Seller Details -->
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Seller GSTIN" />
+                                <table:template>
+                                    <Text text="{docs>seller_details_gstin}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Seller Trade Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>seller_details_trade_name}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="280px"
+                                visible="false"
+                            >
+                                <Label text="Seller Address 1" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>seller_details_address1}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Seller Address 2" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>seller_details_address2}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Seller Pincode" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>seller_details_pincode}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Seller State" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>seller_details_state_code}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Seller Contact & Shipping Details -->
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Seller Phone Number" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>seller_details_phone_number}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Seller Email" />
+                                <table:template>
+                                    <Text text="{docs>seller_details_email}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Ship GSTIN" />
+                                <table:template>
+                                    <Text text="{docs>ship_details_gstin}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Ship Legal Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ship_details_legal_name}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label text="Ship Trade Name" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ship_details_trade_name}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="280px"
+                                visible="false"
+                            >
+                                <Label text="Ship Address 1" />
+                                <table:template>
+                                    <Text text="{docs>ship_details_address1}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="200px"
+                                visible="false"
+                            >
+                                <Label text="Ship Address 2" />
+                                <table:template>
+                                    <Text text="{docs>ship_details_address2}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Ship Location" />
+                                <table:template>
+                                    <Text text="{docs>ship_details_location}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Ship Pincode" />
+                                <table:template>
+                                    <Text text="{docs>ship_details_pincode}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Ship State" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>ship_details_state_code}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Transaction Details -->
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="User GSTIN" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>transaction_details_user_gstin}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Supply Type" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>transaction_details_supply_type}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Charge Type" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>transaction_details_charge_type}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Ecommerce GSTIN" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>transaction_details_ecommerce_gstin}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="IGST on Intra" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>transaction_details_igst_on_intra}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Value Details -->
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Total Assessable Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_assessable_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Total CGST Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_cgst_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Total SGST Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_sgst_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Total IGST Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_igst_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Total CESS Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_cess_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Total CESS State Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_cess_value_of_state}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Round Off Amount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_round_off_amount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Total Invoice Value" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_invoice_value}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="160px"
+                                visible="false"
+                            >
+                                <Label text="Total Discount" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_discount}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="180px"
+                                visible="false"
+                            >
+                                <Label text="Total Other Charge" />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_other_charge}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column
+                                width="220px"
+                                visible="false"
+                            >
+                                <Label
+                                    text="Total Invoice Value (Additional Currency)"
+                                />
+                                <table:template>
+                                    <Text
+                                        text="{docs>value_details_total_invoice_value_additional_currency}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <!-- Document -->
+                        </table:columns>
+                    </table:Table>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

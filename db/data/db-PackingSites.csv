@@ -1,0 +1,601 @@
+ID,pkgSiteName,pkgSiteCode,status
+1,Sandoz GmbH (Kundl - AT),SP000178,Active
+2,Medreich Ltd (Unit-I : Bangalore - IN),SP008166,Active
+3,Remedica Ltd (Limassol - CY),SP000979,Active
+4,Sophartex (Vernouillet Dreux - FR),SP001148,Active
+5,Acino Estonia OU (Polva - EE),SP004334,Active
+6,Acino Pharma AG (Liesberg - CH),SP000687,Active
+7,Acino Pharma AG (Aesch - CH),SP000877,Active
+8,Tjoapack Netherlands BV (Etten-Leur - NL),SP001302,Active
+9,Pharmathen Pharmaceutical SA (Pallini - GR),SP000173,Active
+10,Weimer Pharma GmbH (Rastatt - DE),SP001016,Active
+11,Galien LPS (Sens - FR),SP001150,Active
+12,Delpharm (Lys-Lez-Lannoy - FR),SP001106,Active
+13,Granules India Ltd (Gagillapur - IN),SP000624,Active
+14,Towa Pharmaceutical Europe S.L. (Martorelles - ES),SP000716,Active
+15,Hikma Farmaceutica S.A (Terrugem - PT),SP000622,Active
+16,Medac Gesellschaft (Wedel - DE),SP000799,Active
+17,Zenara Pharma Pvt (Hyderabad - IN),SP000901,Active
+18,MITIM Srl (Brescia - IT),SP000849,Active
+19,Venus Remedies Ltd (Baddi - IN),SP001611,Active
+20,Generis Farmaceutica SA (Amadora - PT),SP000073,Active
+21,Help SA (Ioannina - GR),SP000869,Active
+22,Famar (Orleans - FR),SP000086,Active
+23,"Biocon Ltd. (Jigani Link) (Bangalore, Karnataka - India)",SP000104,Active
+24,Vianex SA (Plant C : Pallini - GR),SP000376,Active
+25,Merckle GmbH (Ulm - DE),SP000838,Active
+26,Cenexi (Fontenay-sous-Bois - FR),SP000543,Active
+27,European Packaging Centre (Oudehaske - NL),SP001094,Active
+28,Tjoapack BV (Emmen - NL),SP000237,Active
+29,Fine Foods & Pharmaceuticals NTM SpA (Bergamo - IT),SP000220,Active
+30,Tjoa Pack Hungary (Budaors - HU),SP000712,Active
+31,Altan Pharmaceuticals SA (Bernedo - ES),SP000158,Active
+32,Prasfarma Oncologicos SL (Barcelona - ES),SP000427,Active
+33,Reig Jofre Laboratorio SA (Toledo - ES),SP000176,Active
+34,Neuraxpharm Pharmaceuticals S.L (Barcelona - ES),SP000701,Active
+35,Apotex Netherlands BV (Leiden - NL),SP000035,Active
+36,Special Product’s Line S.P.A.(Anagni - IT),SP001631,Active
+37,KRKA Polska Sp Zoo (Warsaw - PL),SP000150,Active
+38,Guangzhou Wondfo Biotech Co (Guangzhou - CN),SP000341,Active
+39,Sharp Packaging Solutions (Heerenveen - NL),SP001717,Active
+40,"Sun Pharmaceutical Industries, Inc. (Spafield - Ireland)",SP000403,Active
+41,Rivopharm SA (Lugano - CH),SP000153,Active
+42,GE Pharmaceuticals Ltd (Botevgrad - BG),SP000929,Active
+43,Gedeon Richter Ltd (Budapest - HU),SP000033,Active
+44,Douglas Pharmaceuticals Ltd (Auckland - NZ),SP000788,Active
+45,Sun Pharmaceutical Industries Ltd (Dewas - IN),SP000236,Active
+46,Luye Pharma AG (Miesbach - DE),SP001621,Active
+47,KRKA (Novo Mesto - SI),SP000292,Active
+48,Torrent Pharmaceuticals Ltd (Baddi - IN),SP001700,Active
+49,Manufacturing Packaging Farmaca BV (MPF) (Heerenveen - NL),SP008144,Active
+50,Delpharm (Bretigny-sur-Orge - FR),SP000890,Active
+51,Orchid Healthcare (Kancheepuram - IN),SP001384,Active
+52,Laboratorios Leon Farma (Leon - ES),SP000372,Active
+53,Haupt Pharma Wolfratshausen GmbH (Wolfratshausen - DE),SP000166,Active
+54,Europhartech (Lempdes - FR),SP001104,Active
+55,Dar Al Dawa Development & Investment Co of Prince Hashim (Amman - JO),SP000695,Active
+56,AJC Pharma (Chateauneuf sur Charente - FR),SP001039,Active
+57,Merck SL (Mollet Del Valles - ES),SP000742,Active
+58,Famar SA (Plant A : Athens - GR),SP000549,Active
+59,Farmea SPAS (Angers - FR),SP001054,Active
+60,Intas Pharmaceuticals Ltd (Matoda : Ahmedabad - IN),SP000465,Active
+61,Doppel Farmaceutici Srl (Cortemaggiore - IT),SP000456,Active
+62,GL Pharma GmbH (Lannach - AT),SP008779,Active
+63,Catalent Germany Schorndorf GmbH (Schorndorf - DE),SP000689,Active
+64,Centrafarm Services (Etten Leur - NL),SP001628,Active
+65,Haupt Pharma Muenster GmbH (Muenster - DE),SP000698,Active
+66,Farmaclair (Herouville Saint Clair - FR),SP001445,Active
+67,Temmler Werke GmbH (Munchen - DE),SP000522,Active
+68,Haupt Pharma Amareg GmbH (Regensburg - DE),SP001377,Active
+69,Ind-Swift Ltd (Dera Bassi - IN),SP002362,Active
+70,Laboratorios Salvat SA (Esplugues de Llobregat - ES),SP000373,Active
+71,ABC Farmaceutici SpA (Ivrea - IT),SP000221,Active
+72,Servier (Ireland) Industries Ltd (Arklow - IE),SP000648,Active
+73,Aurobindo Pharma Ltd (Unit-VI : Patancheru Mandal - IN),SP000241,Active
+74,Reig Jofre Laboratorio SA (Sant Joan Despi - ES),SP000547,Active
+75,Altea Farmaceutica SA (Bogota - CO),SP000703,Active
+76,Disphar International BV (Hengelo - NL),SP000822,Active
+77,Amcapharm GmbH (Rosbach - DE),SP002673,Active
+78,Biofarma Pharmaceutical Industry Co Inc (Istanbul - TR),SP000552,Active
+79,Zaklady Farmaceutyczne Polpharma S.A (Nowa Deba - PL),SP000392,Active
+80,Basic Pharma Manufacturing (Geleen - NL),SP000922,Active
+81,Actavis Ltd (Zejtun - MT),SP000301,Active
+82,Chanelle Medical Ltd (Galway - IE),SP000472,Active
+83,Lupin Ltd (Verna - IN),SP000631,Active
+84,Micro Labs Ltd (Veerasandra - IN),SP000295,Active
+85,Kern Pharma SL (Terrasa - ES),SP000700,Active
+86,Atlantic Pharma - Producoes Farmaceuticas SA (Sintra - PT),SP000544,Active
+87,Lecifarma Especialidades Farmaceuticas e Produtos Galenicos Lda (Loures - PT),SP000992,Active
+88,Toll Manufacturing Services SL (Madrid - ES),SP002212,Active
+89,Doppel Farmaceutici Srl (Rozzano - IT),SP000161,Active
+90,UAB Santonika (Kaunas - LT),SP001320,Active
+91,Lamp S Prospero SpA (San Prospero - IT),SP001145,Active
+92,Delpharm (Evreux - FR),SP000252,Active
+93,Sirton Pharmaceuticals SPA (Como - IT),SP000581,Active
+94,Farmalabor Produtos Farmaceuticos SA (Condeixa-a-Nova - PT),SP000899,Active
+95,Sandoz SRL (Targu Mures - RO),SP000709,Active
+96,Esteve Quimica SA (Barcelona - ES),SP001487,Active
+97,Micro Labs Ltd (FDF : Bommasandra - IN),SP000215,Active
+98,Zaklady Farmaceutyczne Polpharma SA (Starogard Gdanski - PL),SP001512,Active
+99,Bluepharma Industria Farmaceutica SA (Coimbra - PT),SP000148,Active
+100,Pharmathen International S.A. (Rodopi),SP000473,Active
+101,Dragenopharm Apotheker Puschl GmbH & Co KG (Tittmoning - DE),SP000696,Active
+102,Laboratorio Farmaceutico CT Srl (Sanremo - IT),SP000574,Active
+103,Laboratoires Chemineau (Vouvray - FR),SP000819,Active
+104,Pharmapack Stade GmbH (Stade - DE),SP005433,Active
+105,Esteve Quimica SA (Celra - ES),SP000468,Active
+106,Thymoorgan Pharmazie GmbH (Allemagne - DE),SP000579,Active
+107,Delpharm (Chambray Les Tours - FR),SP000160,Active
+108,Vianex SA (Plant D : Patras - GR),SP000576,Active
+109,Chiesi Farmaceutici SpA (Parma - IT),SP000050,Active
+110,"Laboratorios Liconsa, S.A. (Azuqueca de Henares, Guadalaja - ES)",SP000582,Active
+111,SMB Technology (Marche-en-Famenne - BE),SP001121,Active
+112,Hexal AG (Holzkirchen - DE),SP007944,Active
+113,Central Pharma Contract Packaging Ltd (Bedford - UK),SP000690,Active
+114,Valpharma International SpA (Pennabilli - IT),SP000713,Active
+115,NextPharma Germany (Pharbil) (Waltrop - DE),SP000629,Active
+116,Unichem Laboratories Ltd (Pilerne - IN),SP000430,Active
+117,ACS Dobfar SpA (Pomezia - IT),SP000864,Active
+118,Nordmark Pharma GmbH (Uetersen - DE),SP001143,Active
+119,Pharmathen Pharmaceutical SA (Sapes - GR),SP004372,Active
+120,Tollpharma (Alcobendas - ES),SP001159,Active
+121,Swiss Co Services AG (Sisseln - CH),SP001079,Active
+122,Unither Liquid Manufacturing (Colomiers - FR),SP000606,Active
+123,Tjoapack Boskoop BV (Hazerswoude-Dorp - NL),SP001052,Active
+124,Combino Pharm (Malta) Ltd (Hal Far - MT),SP001677,Active
+125,Hermes Pharma GmbH (Wolfrathausen - DE),SP001067,Active
+126,H2 Pharma (Bois d Arcy - FR),SP000306,Active
+127,All-Gen Pharmaceuticals (Voorschoten - NL),SP005321,Active
+128,Fresenius Kabi Austria GmbH (Linz - AT),SP001210,Active
+129,Jadran Galenski Laboratorij dd (Rijeka - HR),SP000617,Active
+130,"Alembic Pharmaceuticals Limited - Formulation Division (Panchmahal, Gujarat - IN)",SP000605,Active
+131,Laboratoires BTT (Erstein - FR),SP000243,Active
+132,Laboratorios Cinfa SA (Olloqui - ES),SP000854,Active
+133,Abdi Ibrahim Ilac San ve Tic AS (Istanbul - TR),SP000964,Active
+134,Farmasierra Manufacturing SL (Madrid - ES),SP000719,Active
+135,Fine Foods & Pharmaceuticals NTM SpA (Brembate - IT),SP001099,Active
+136,Contract Pharmaceutical Services of Australia Pty Ltd (Eden Park Dr : North Ryde - AU),SP000217,Active
+137,Lacer SA (Cerdanyola del Valles - ES),SP001243,Active
+138,Laboratorios CINFA SA (Pamplona - ES),SP001974,Active
+139,Flamingo Pharmaceuticals Limited (Maharshtra - IN),SP000943,Active
+140,Labiana Pharmaceuticals SL (Corbera de Llobregat - ES),SP003473,Active
+141,SAG Manufacturing SL (Madrid - ES),SP001766,Active
+142,Tedec-Meiji Farma SA (Alcala de Henarei - ES),SP000984,Active
+143,Laboratorios Rubio SA (Barcelona - ES),SP001421,Active
+144,Frosst Ibérica S.A. (Rovi Alcala) (Madrid - ES),SP001246,Active
+145,Salutas Pharma GmbH (Barleben - DE),SP000674,Active
+146,Cipla Ltd (Pune - IN),SP000046,Active
+147,Bene Arzneimittel GmbH (Munich - DE),SP000246,Active
+148,Cipla Ltd (Bangalore - IN),SP000206,Active
+149,Haupt Pharma Livron SAS (Livron-Sur-Drome - FR),SP000165,Active
+150,Konapharm AG (Pratteln - CH),SP000676,Active
+151,Germed Farmaceutica Ltd (Hortolandia - BR),SP001339,Active
+152,Excella GmbH (Plant 2 : Feucht - DE),SP000028,Active
+153,Qualiphar NV (Bornem - BE),SP001275,Active
+154,LDP Laboratoires Torlan SA (Cerdanyola Des Valles - ES),SP000167,Active
+155,Medis International (Bolatice - CZ),SP000677,Active
+156,Bayer Schering Pharma AG (Berlin - DE),SP002754,Active
+157,CIT s.r.l. (Burago Molgora (MI) - IT),SP000394,Active
+158,Krewel Meuselbach GmbH (Eitorf - DE),SP000784,Active
+159,Esseti Farmaceutici S.r.l. (Pomezia - IT),SP000224,Active
+160,Pharmaserve Ltd (Runcorn - UK),SP000593,Active
+161,Desitin Arzneimittel GmbH (Hamburg - DE),SP002536,Active
+162,TD Packaging Ltd (Swindon - GB),SP000711,Active
+163,Steriscience Sp. z o.o. (Warsaw - PL),SP005831,Active
+164,Zhejiang Jingxin Pharmaceutical Co Ltd (Yulin - CN),SP001805,Active
+165,Sanochemia Pharmazeutika AG - Plant 1 (Neufeld/an der Leitha - Austria),SP002046,Active
+166,Merck KGaA (Darmstadt - DE),SP004287,Active
+167,Agila Specialities Private Limited (Bangalore - IN),SP001651,Active
+168,Medis (Hafnarfjordur - IS),SP008163,Active
+169,Adamed Pharma S.A. (Pabianice - PL),SP001529,Active
+170,Synthon BV (Nijmegen - NL),SP000180,Active
+171,Zaklady Farmaceutyczne COLFARM SA (Mielec - PL),SP000297,Active
+172,Unichem Laboratories Ltd (Ghaziabad - IN),SP000623,Active
+173,Oman Pharmaceutical Products Company LLC (Salalah - OM),SP000434,Active
+174,Stada Arzneimittel AG (Bad Vilbel - DE),SP000675,Active
+175,Ovelle Ltd (Dundalk - IE),SP000647,Active
+176,Delpharm (L'Aigle - FR),SP000697,Active
+177,Haupt Pharma Wulfing GmbH (Gronau - DE),SP000082,Active
+178,Aurobindo Pharma Ltd (Unit-VII : Jebcherla - IN),SP002155,Active
+179,Hospira Healthcare India Private Ltd (Sriperumbudur - IN),SP001383,Active
+180,Intas Pharmaceuticals Ltd (Dehradun - IN),SP004680,Active
+181,Synthon Argentina SA (San Lorenzo - AR),SP000266,Active
+182,Farmila-Thea (Settimo Milanese - IT),SP000934,Active
+183,Artesan Pharma GmbH & Co KG (Luchow - DE),SP000898,Active
+184,IBN Savio (Ronco Scrivia - IT),SP001214,Active
+185,Abiogen Pharma SpA (Pisa - IT),SP000431,Active
+186,Unither Industries (Gannat - FR),SP001051,Active
+187,Actavis Balkanpharma - Troyan AD (Troyan - BG),SP001829,Active
+188,Steiner & Co Deutsche Arzneimittel Gesellschaft (Berlin - DE),SP001259,Active
+189,E Pharma Trento SpA (Trento - IT),SP001093,Active
+190,Lusomedicamenta (Barcarena - PT),SP000149,Active
+191,Istituto Biochimico Italiano (IBI) (Milano - IT),SP001913,Active
+192,"Sun Pharmaceutical Industries Ltd. (Halol, Gujarat - IN)",SP001591,Active
+193,Swiss Caps GmbH (Bad Aibling - DE),SP000959,Active
+194,Oncotec Pharma Produktion GmbH (Dessau-Rosslau - DE),SP000171,Active
+195,Unimed Laboratoires (Kalaa Kebira - TN),SP000181,Active
+196,Advance Pharma Production GmbH & Co KG (Berlin - DE),SP000783,Active
+197,LTS Lohmann Therapie-Systeme AG (Andernach - DE),SP001444,Active
+198,Ind-Swift Ltd (Jawaharpur - IN),SP000699,Active
+199,Simcere Pharmaceutical Co. Ltd (Haikou City - CN),SP001418,Active
+200,Encube Ethicals Pvt Ltd (Ponda - IN),SP001788,Active
+201,Laboratoires Macors (Auxerre - FR),SP000835,Active
+202,Cyndea Pharma S.L. (Soria - ES),SP001257,Active
+203,Laphal Industries Rousset (Rousset - FR),SP001116,Active
+204,Tesa Labtec GmbH (Hamburg - DE),SP001935,Active
+205,Dragenopharm Apotheker Puschl GmbH & Co KG (Berlin - DE),SP000987,Active
+206,Saneca Pharmaceuticals A.S. (Hlohovec-SK),SP000714,Active
+207,Synerlab Laboratories (Orleans Cedex 2 - FR),SP001133,Active
+208,Hennig Arzneimittel GmbH & Co KG (Floersheim am Main - DE),SP000996,Active
+209,Klocke Pharma-Service GmbH (Appenweier - DE),SP000715,Active
+210,Klocke Verpackungs-Service GmbH (Weingarten - DE),SP001082,Active
+211,Wiewelhove GmbH (Ibbenburen - DE),SP001072,Active
+212,Medreich Ltd (Unit-III : Bangalore - IN),SP000803,Active
+213,Lindopharm GmbH (Hilden - DE),SP001618,Active
+214,Logosys PKL Service GmbH & Co KG (Darmstadt - DE),SP002799,Active
+215,Pharmatis SAS (Estrees Saint Denis - FR),SP001060,Active
+216,Delpharm (Orleans - FR),SP000914,Active
+217,Losan Pharma GmbH (Neuenburg - DE),SP000151,Active
+218,Phyteo Laboratoire (Monts - FR),SP000988,Active
+219,Haupt Pharma Brackenheim GmbH (Brackenheim - DE),SP000817,Active
+220,Famar SA (Avlonas - GR),SP000551,Active
+221,Hermes Pharma GmbH (Wolfsberg - AT),SP001023,Active
+222,NextPharma (Limay - FR),SP000930,Active
+223,Unimedic AB (Matfors - SE),SP000182,Active
+224,Dr Willmar Schwabe GmbH & Co (Karlsruhe - DE),SP001109,Active
+225,Apogepha Arzneimittel GmbH (Dresden - DE),SP000829,Active
+226,Delpharm (Reims - FR),SP000717,Active
+227,"Les Laboratoires Sothema (Salah, Bouskoura, Casablanca - MA)",SP001607,Active
+228,Pharma Developpement (Corbigny - FR),SP001211,Active
+229,Les Laboratories Servier Industries (Gidy - FR),SP001006,Active
+230,Vianex SA (Plant A : Metamorfosi - GR),SP000183,Active
+231,Famar Greece (Anthoussa - GR),SP000550,Active
+232,Genepharm SA (Pallini - GR),SP000870,Active
+233,Actavis Italy Spa (Nerviano - IT),SP001522,Active
+234,Temmler Pharma GmbH & Co KG (Marburg - DE),SP000369,Active
+235,AAZ - LMB (Boulogne - Billancourt - FR),SP004614,Active
+236,IDT Biologika GmbH (Dessau-Rosslau - DE),SP000520,Active
+237,Delpharm Huningue S.A.S. (Huningue - FR),SP002112,Active
+238,Synthon Chile Ltda (Santiago - CL),SP002458,Active
+239,Pencef Pharma GmbH (Berlin - DE),SP008303,Active
+240,Esparma GmbH (Magdeburg - DE),SP002140,Active
+241,Genetic S.p.A. (Fisciano - IT),SP000257,Active
+242,Develco Pharma Schweiz AG ( Pratteln - CH ),SP003872,Active
+243,Dr Reddys Laboratories Ltd (Beverley - GB),SP000607,Active
+244,Lupin Ltd (Bhopal Mandideep - IN),SP000724,Active
+245,IBSA Farmaceutici Italia Srl (Lodi - IT),SP002756,Active
+246,Truffini & Regge Farmaceutici S.r.l. (Milan - Italy),SP002707,Active
+247,Indoco Remedies Ltd. - Goa Plant II (Goa - IN),SP002136,Active
+248,Alfasigma S.p.A. (Alanno - IT),SP001045,Active
+249,Galenicum Health S.L. (Madrid - ES),SP003656,Active
+250,Sinopharm Zhijun (Shenzhen) Pharmaceutical Co. Ltd (Shenzen - CN),SP002052,Active
+251,Alkaloid AD Skopje (Skopje - MK),SP002831,Active
+252,Aurena Laboratories (Karlstad - Sweden),SP002607,Active
+253,Delpharm Gaillard S.A.S. (Gaillard - FR),SP001991,Active
+254,Medreich Plc (Feltham - UK),SP001630,Active
+255,Balkanpharma - Razgrad AD (Razgrad - BG),SP002263,Active
+256,Synthon Hispania (Sant Boi De Llobregat - ES),SP000866,Active
+257,Gland Pharma Ltd (Hyderabad - IN),SP000970,Active
+258,Hetero Labs Limited Unit V (Polepally - IN),SP002452,Active
+259,Ipca Laboratories Ltd (Silvassa - IN),SP000614,Active
+260,S.A.L.F SpA Laboratorio Farmacologico (Cenate Sotto - IT),SP004320,Active
+261,Savio Industrial s.r.l. (Pavia - IT),SP004244,Active
+262,Indoco Remedies Ltd. - Goa Plant III (Goa - IN),SP002995,Active
+263,Biocon Sdn Bhd (Nusajaya - MY),SP002380,Active
+264,Farmaceutici Formenti SpA (Origgio - IT),SP001798,Active
+265,Micro Labs Ltd (Hosur - IN),SP000602,Active
+266,Pharmaloop S.L. (Alcala de Henares - ES),SP004308,Active
+267,Laboratorios Normon SA (Tres Cantos - ES),SP000164,Active
+268,Kindeva Drug Delivery L.P. (Northridge - US),SP003015,Active
+269,Med-X-Press GmbH (Goslar - DE),SP001304,Active
+270,Recipharm (Parets - ES),SP002158,Active
+271,Laboratorios Vitoria SA (Amadora - PT),SP001142,Active
+272,AbbVie (Campoverde - IT),SP000997,Active
+273,Abbott Biologicals B.V. (Olst - NL),SP000913,Active
+274,Abbott Laboratories GmbH (Neustadt – DE),SP002358,Active
+275,Delpharm (Saint Remy Sur Avre - FR),SP002669,Active
+276,Patheon Italia SpA (Monza - IT),SP002239,Active
+277,Se-cure Pharmaceuticals Ltd. (Airport City - IL),SP004503,Active
+278,GMPack ApS (Hadsund - DK),SP002784,Active
+279,Farmalider S.A. Madrid - ES),SP001976,Active
+280,Astrea Fontaine SAS (Dijon - FR),SP000999,Active
+281,Delorbis Pharma (Lefkosia - CY),SP001151,Active
+282,Alifarm S.A. (Barcelona - ES),SP002426,Active
+283,AB Biotics S.A. (Barcelona - ES),SP002718,Active
+284,Flen Health NV/SA (Kontich - BE),SP004580,Active
+285,Adhex Pharma (Chenove - FR),SP002150,Active
+286,Laboratoires URGO (Chevigny Saint Sauveur - FR),SP003273,Active
+287,Delpharm (Bladel - NL),SP002926,Active
+288,Laboratorios Basi - Industria Farmaceutica S.A. (Mortagua - PT),SP004341,Active
+289,Natco Pharma Ltd (Pharma Division : Unit 7 : Dehradun - IN),SP001944,Active
+290,Novartis Pharma Stein AG (Stein - CH),SP003092,Active
+291,Vianex SA (Plant B : Attica - GR),SP003272,Active
+292,Medicair Bioscience Laboratories S.A / SJA Pharm Ltd. (Schimatari - GR),SP002777,Active
+293,SC Rompharm Company SRL (Otopeni - RO),SP001281,Active
+294,PCl Pharma Services (Hay-on-Wye - UK),SP004519,Active
+295,Cadila Healthcare Ltd (Zydus Cadila) (Dabhasa - IN),SP003169,Active
+296,Katsuyama Pharmaceuticals K.K. (Katsuyama - Fukui - JP),SP002571,Active
+297,Medigene AG (DE),SP002236,Active
+298,Idifarma Desarrollo Farmaceutico S.L. (Navarra - ES),SP002036,Active
+299,Legacy Pharmaceuticals Switzerland GmbH (Birsfelden - CH),SP003479,Active
+300,Sanofi-Aventis Detuschland GmbH (Frankfurt - DE),SP000523,Active
+301,Sofarimex Industria Quimica e Farmaceutica Lda (Agualva - PT),SP003588,Active
+302,Sidefarma SA (Prior Velho - PT),SP003582,Active
+303,Dompe Farmaceutici S.p.A. (L'Aquila - IT),SP004337,Active
+304,Especialidades Farmaceuticas Centrum S.A (Alicante - ES),SP004553,Active
+305,Angelini ACRAF S.p.A. (Ancona - IT),SP003019,Active
+306,Takeda GmbH (Oranienburg - DE),SP003614,Active
+307,Fulton Medicinali spa (Arese - IT),SP003402,Active
+308,Tubilux Pharma S.p.A. (Pomezia/Roma - IT),SP003626,Active
+309,Norgine BV (Dreux - FR),SP003156,Active
+310,Streuli Pharma AG (Uznach - CH),SP002925,Active
+311,Dr. Kade Pharmazeutische Fabrik GmbH (Berlin - DE),SP004606,Active
+312,SVUS Pharma as (Hradec Kralove - CZ),SP008542,Active
+313,Recordati S.p.A (Milano - IT),SP002241,Active
+314,Fareva Amboise (Poce sur Cisse - FR),SP004348,Active
+315,Holopack Verpackungstechnik GmbH (Werk 2) (Abtsgmünd-Untergröningen-DE),SP003676,Active
+316,Dronania Pharmaceuticals GmbH (Bad Worishofen - DE),SP007091,Active
+317,Oncomed Manufacturing A.S. (Brno-Reckovice - CZ),SP003263,Active
+318,Haupt Pharma Latina Srl (Latina - IT),SP001405,Active
+319,Ethypharm Industries SA (Le Grand Quevilly - FR),SP000846,Active
+320,Pierre Fabre Medicament Production (Aignan - FR),SP004883,Active
+321,ICN Polfa Rzeszow S.A. (Rzeszow - PL),SP003441,Active
+322,Celon Pharma S.A. (Kazun Nowy - PL),SP002898,Active
+323,Orifarm Manufacturing Poland Sp. z o.o. (Lyszkowice - PL),SP004715,Active
+324,Renaissance Lakewood LLC (Lakewood NJ - US),SP001408,Active
+325,Recipharm Stockholm AB (Jordbro - SE),SP003834,Active
+326,Lozy's Pharmaceuticals S.L. (Navarra - ES),SP004495,Active
+327,Cipla Ltd Unit III (Pithampur - IN),SP004247,Active
+328,Recipham Strangnas AB (Strangnas - SE),SP003548,Active
+329,Corden Pharma GmbH (Plankstadt - DE),SP004624,Active
+330,Grindeks (Riga - LV),SP000024,Active
+331,Quality Packaging Specialists International LLC (Macungie PA - US),SP004325,Active
+332,Prespack Sp. z o.o. (Skorzewo - PL),SP004930,Active
+333,Catalent CTS Ltd (Edinburgh - UK),SP005857,Active
+334,Rontis Hellas Medical and Pharmaceutical Products SA (Larissa - GR),SP004342,Active
+335,Aizant Drug Research Solutions Pvt. Ltd (Hyderbad - IN),SP001598,Active
+336,PharmLog Pharma Logistik GmbH (Bonen - DE),SP000969,Active
+337,L-A-W Services GmbH (Leipzig - DE),SP002463,Active
+338,STADA-Vietnam Joint Venture Co. Ltd (Binh Duong - VN),SP004969,Active
+339,Vamfarma Srl (Comazzo - IT),SP001811,Active
+340,Rafarm SA (Paiania - GR),SP000401,Active
+341,"Laboratorios Entema, S.L. (Barcelona – ES)",SP007038,Active
+342,Laboratorios Alcala Farma SL (Madrid - ES),SP000954,Active
+343,Lachifarma S.R.L. (Zollino (LE) - Italy),SP004465,Active
+344,Laboratorios ERN S.A. (Barcelona - ES),SP003853,Active
+345,ASM Aerosol-Service AG (Moehlin - CH),SP003210,Active
+346,Norgine Ltd (Hengoed - UK),SP003511,Active
+347,Thornton and Ross Limited (Huddersfield - UK),SP002244,Active
+348,Rosch-Delta (Ranstadt - DE),SP003564,Active
+349,Bespak HC Limited (Cheshire - UK),SP004582,Active
+350,Lipomaidsan Hirschberg Cosmetic-Produktions GmbH (Weilheim - DE),SP003482,Active
+351,Bolder Arzneimittel GmbH & Co. KG (Koln - DE),SP003142,Active
+352,SystemKosmetik GmbH (Muenster - DE),SP003612,Active
+353,P.W. Beyvers GmbH (Berlin - DE),SP003158,Active
+354,Robugen GmbH (Esslingen - DE),SP003561,Active
+355,Sander Strothmann GmbH (Georgsmarienhutte - DE),SP003568,Active
+356,Sanico NV (Turnhout - BE),SP000639,Active
+357,Zeta Farmaceutici SpA (Sandrigo - IT),SP004200,Active
+358,Catalent Pharma Solutions (Bolton - UK),SP001730,Active
+359,Corden Pharma Latina S.p.A. (Sermoneta - IT),SP003146,Active
+360,Piramal Healthcare UK Ltd (Morpeth - GB),SP000575,Active
+361,Pharmasol (Andover) (Andover - UK),SP003159,Active
+362,Merz Pharma GmbH & Co. KGaA (Reinheim - DE),SP003498,Active
+363,Martin Dow Pharmaceuticals (Meymac - FR),SP005016,Active
+364,Cana Pharmaceutical Laboratories S.A. (Attica - GR),SP003858,Active
+365,Solupharm Pharmazeutische Erzeugnisse GmbH (Melsungen - DE),SP005007,Active
+366,Scanpharm A/S (Birkerod - DK),SP001979,Active
+367,GK Pharma ApS (Koge - DK),SP003415,Active
+368,Orkla Care A/S (Lynge - DK),SP003157,Active
+369,PharmAdis S.A.(Cebazat - FR),SP001319,Active
+370,NextPharma GmbH (Goettingen - DE),SP000993,Active
+371,Haupt Pharma Berlin GmbH (Berlin - DE),SP000806,Active
+372,"Industrias Farmaceuticas Almirall, S.A. (Sant Andreu de la Barca - Spain)",SP003153,Active
+373,Laboratoires M Richard (Saulce - FR),SP003154,Active
+374,Laboratoires Renaudin (Iitxassou - FR),SP000177,Active
+375,Dr. Pfleger Arzneimittel GmbH (Bamberg - DE),SP003149,Active
+376,Holopack Verpackungstechnik GmbH (Sulzbach-Laufen-DE),SP003433,Active
+377,APL Swift Services (Malta) Ltd (Hal Far - MT),SP000421,Active
+378,Chr. Hansen A/S Avedore (Hvidovre - DK),SP003326,Active
+379,Sun Pharmaceutical Industries Ltd (Paonta Sahib) ( Himachal Pradesh - India),SP001397,Active
+380,Farco Pharma GmbH (Koeln - DE),SP004486,Active
+381,Cabot Norit Nederland B.V. (Klazienaveen - NL),SP002202,Active
+382,Shilpa Medicare Ltd. (Jadcherla Unit - IN),SP004434,Active
+383,Lek Pharmaceuticals Inc. d. d. (Lendava - SI),SP002896,Active
+384,PRIMA Lab SA (Balerna - CH),SP002641,Active
+385,SANTA S.A. (SANOSAN Pharmaceuticals) (Brasov - RO),SP002982,Active
+386,Mefar Ilac San. A.S. (Istanbul - TR),SP004534,Active
+387,Laboratoires Pharmaceutiques Rodael (SAS) (Bierne - FR),SP003231,Active
+388,Cipla Ltd. (Unit I - Goa),SP000189,Active
+389,Besins Manufacturing Belgium SA (Drogenbos - BE),SP003134,Active
+390,Shenzhen Techdow Pharmaceutical Co. Ltd (Shenzen - CN),SP004952,Active
+391,Synoptis Industrial Sp. z o. o. (Swarzedz - PL),SP005382,Active
+392,Laboratorio Edefarm S.L. (Valencia - ES),SP002814,Active
+393,BAG Health Care GmbH (Lich - DE),SP003107,Active
+394,Unison Pharmaceuticals Pvt Ltd. (Unit-III : Ahmedabad - IN),SP005161,Active
+395,Industria Quimica y Farmaceutica VIR SA (Alcorcon - ES),SP002818,Active
+396,Laboratorio Farmacologico Milanese Srl (Caronno - IT),SP001365,Active
+397,Aurobindo Pharma Ltd (Unit- XV : Visakhapatnam - IN),SP005423,Active
+398,PharOS MT Ltd (Birzebbugia - MT),SP000450,Active
+399,Indoco Remedies Ltd. - Goa Plant I (Goa - IN),SP002206,Active
+400,Vetprom AD (Radomir - BG),SP005703,Active
+401,Strides Pharma Science Ltd (Puducherry - IN),SP000748,Active
+402,Pharmacare Premium Ltd (Birzebbugia - MT),SP002888,Active
+403,Aspen NDB SAS (Notre-Dame-de-Bondeville - FR),SP002246,Active
+404,Sigmapharm Laboratories LLC (Bensalem PA - US),SP005390,Active
+405,Apollo Pharma Ltd (Bury - GB),SP005646,Active
+406,Eugia Pharma Specialties Ltd (Unit 2 : Bhiwadi - IN),SP001681,Active
+407,Catalent Italy SpA (Aprilia - IT),SP003145,Active
+408,Ferrer Internacional SA (San Cugat del Valles - ES),SP001451,Active
+409,Rovi Pharma Industrial Services S.A. (Alcala de Henares - ES),SP005910,Active
+410,Soho Flordis International Switzerland SA (Bioggio - CH),SP004438,Active
+411,Laphal Industries Allauch (Allauch - FR),SP001115,Active
+412,Nobel Ilac Sanayii ve Ticaret A.S. (Duzce - TR),SP005403,Active
+413,Curtis Health Caps Sp zoo (Wysogotowo - PL),SP002758,Active
+414,United Drug Distributors (Dublin - IE),SP003919,Active
+415,Tenshi Kaizen Pvt Ltd (Kanakapura - IN),SP005147,Active
+416,Mussler Cosmetic Production GmbH & CO KG  (Baden-Baden - DE),SP003501,Active
+417,Adipharm EAD (Sofia - BG),SP004609,Active
+418,AqVida GmbH (Dassow - DE),SP005507,Active
+419,Medreich Ltd Unit-VIII (Bangalore - IN),SP004866,Active
+420,Granules India Ltd (Unit-V) (Visakhapatnam - IN),SP004916,Active
+421,Nutrilo GmbH (Cuxhaven - DE),SP003515,Active
+422,Elpen Pharmaceutical Co Inc (Pikermi - GR),SP001854,Active
+423,SoliPharma BV (Oudenbosch - NL),SP005900,Active
+424,Biokosmes Srl (Bosisio Parini - IT),SP005985,Active
+425,Pfizer Manufacturing Freiburg (Freiburg - DE),SP005756,Active
+426,Croma-Pharma GmbH (Loebendorf - AT),SP006734,Active
+427,Develco Pharma GmbH (Schopfheim - DE),SP001525,Active
+428,Auro PR Inc. (Caguas - PR),SP006036,Active
+429,Novocol Pharma (Ontario - CA),SP004943,Active
+430,Pfizer Manufacturing Ascoli (Ascoli - IT),SP002722,Active
+431,Pfizer Manufacturing Itapevi (Itapevi - BR),SP005797,Active
+432,Vemedia Manufacturing B.V (Diemen - NL),SP001533,Active
+433,Jamjoom Pharma (Jeddah - SA),SP007103,Active
+434,R PHARM Germany GMBH (Illertissen - DE),SP006299,Active
+435,Pfizer Manufacturing Puurs (Puurs - BE),SP005757,Active
+436,Pfizer Manufacturing Kalamazoo (Kalamazoo - US),SP006483,Active
+437,Sharp Corp. (Allentown - US),SP001232,Active
+438,"Kyukyu Pharmaceutical Co., Ltd. (Toyama - JP)",SP005917,Active
+439,CMIC CMO Co. Ltd. Nishine (Iwate - JP),SP005804,Active
+440,Catalent Pharam Solutions LLC (Winchester - US),SP003310,Active
+441,Grunenthal GmbH (Aachen - DE),SP001615,Active
+442,Daiichi Sankyo Pharmaceutical (Beijing - CN),SP000333,Active
+443,UBI Pharma (Hukou Township - TW),SP005819,Active
+444,Omni Protech Drugs pvt ltd (Maharashtra - IN),SP006016,Active
+445,Medibios Laboratories (Tarapur - IN),SP008160,Active
+446,Hetero Drugs (Bonthapally - IN),SP001331,Active
+447,Lupin Ltd (Unit 3 : Pithampur - IN),SP004616,Active
+448,Sovereign Pharma Pvt. Ltd. (Nani Daman - IN),SP001901,Active
+449,Chemo India Formulations Pvt Ltd (Hyderabad - IN),SP005726,Active
+450,J. Cain & Company (Colon - PA),SP001849,Active
+451,H.Essers (Genk-BE),SP002781,Active
+452,"Gerresheimer Medical Plastics Systems Dongguan Co. Ltd. (Building 5 - 6, Dongguan City - CN)",SP004500,Active
+453,SKV Betopur Kunststofftechnik GmbH,SP003805,Active
+454,Millmount Healthcare (Drogheda - IE),SP000705,Active
+455,"Woodstock Sterile Solutions, Inc. (Woodstock - US)",SP000796,Active
+456,Lupin Ltd (Biotech Division : Pune - IN),SP004900,Active
+457,Sai Parenterals Limited (Sangareddy - IN),SP000625,Active
+458,PharmaPath SA (Athens - GR),SP000710,Active
+459,Beximco Pharmaceuticals Ltd (Gazipur - BD),SP001916,Active
+460,Jemedic AB (Gavle - SE),SP003459,Active
+461,Elpen Pharmaceutical Co Inc (Keratea - GR),SP006879,Active
+462,Future Pharmaceutical Industries (New Cairo - EG),SP006798,Active
+463,Teva Operations Poland Sp. z.o.o. (Krakow - PL),SP000023,Active
+464,Steriscience Specialties Private Ltd (Beta Lactam Division Bangalore - IN),SP005993,Active
+465,Onesource Specialty Pharma Limited (Bangalore - IN),SP005650,Active
+466,Lupin Ltd (Nagpur - IN),SP007000,Active
+467,Macleods Pharmaceuticals Ltd. (Baddi - IN),SP003907,Active
+468,Pure & Cure Healthcare Pvt. Ltd. (Uttarakhand - IN),SP002038,Active
+469,Akums Drugs & Pharmaceuticals Ltd. (Unit 1 : Uttarakhand - IN),SP000802,Active
+470,BDR Pharmaceuticals International Pvt. Ltd. (Gujarat - IN),SP005949,Active
+471,"Hospira Inc (McPherson, KS - US)",SP001010,Active
+472,GPAX Pharmaceuticals Private Ltd (Daman - IN),SP002885,Active
+473,Zydus Lifesciences LTD (Ahmedabad – IN),SP003144,Active
+474,Abhilash Life Sciences LLP (Madurai - IN),SP007251,Active
+475,"Nexgen Pharma Inc (Irvine, CA - US)",SP003188,Active
+476,Altergon Italia srl (Avellino – IT),SP003777,Active
+477,Coripharma ehf. (Hafnarfjordur - IS),SP000626,Active
+478,IASIS Pharma Hellas S.A. (Koropi – GR),SP005466,Active
+479,Zdravlje AD (Leskovac - SR),SP001084,Active
+480,Laboratori Fundacio Dau (Barcelona - ES),SP004371,Active
+481,Laboratorios Lesvi SL (Barcelona - ES),SP000865,Active
+482,Eva Pharma (El-Haram - EG),SP005506,Active
+483,Codilab (LHebergement - FR),SP005943,Active
+484,Tiofarma BV (Oud Beijerland - NL),SP000380,Active
+485,Famar Italia S.p.A. (Baranzate - IT),SP002267,Active
+486,Pharma Stulln GmbH (Stulln - DE),SP000087,Active
+487,"Meridian Medical Technologies Inc (Craig Rd : St Louis, MO - US)",SP000761,Active
+488,Mayne Pharma International Pty Ltd (Salisbury South - AU),SP002649,Active
+489,AbbVie LTD (Barceloneta - PR),SP002630,Active
+490,Spectrum Pharma (Saint-Laurent : Quebec - CA),SP004631,Active
+491,"ABS Aus Pty Ltd (Seven Hills, Sydney - AU)",SP005266,Active
+492,Lannett Company Inc. (Seymour - IN),SP000743,Active
+493,Odan Laboratories Ltd. (Quebec - CN),SP001124,Active
+494,Merck Sante SAS Centre de Production de Semoy (Semoy - FR),SP000673,Active
+495,Famar Health Care Services (Madrid - ES),SP002511,Active
+496,Lipomed AG (Arlesheim - CH),SP005644,Active
+497,Aspen Pharma Pty Ltd (Dandenong South - AU),SP005109,Active
+498,"Sanofi India Goa Manufacturing Unit (Verna, Goa - IN)",SP003812,Active
+499,Sharon Bio-Medicine Ltd (Dehradun - IN),SP005268,Active
+500,Multipack-LJM Pty Ltd (Eastern Creek - AU),SP007106,Active
+501,Cohance Life Sciences Limited (Hyderabad - IN),SP002374,Active
+502,Farmaceutisch Analytisch Laboratorium (FAL) Duiven BV (Duiven - NL),SP000750,Active
+503,Demo SA Pharmaceutical Industry (Lamia - GR),SP001085,Active
+504,Glaxo Wellcome Production (Evreux - FR),SP003293,Active
+505,Kleva Pharmaceuticals SA (Athens - GR),SP005463,Active
+506,Steriscience Specialties Private Ltd (Sterile Product Division Bangalore - IN),SP005992,Active
+507,OPTUS Pharmaceutical Co. Ltd (Chungcheongbuk-do - KR),SP007244,Active
+508,Meda Pharma Spa (Monza - IT),SP003220,Active
+509,"Ali Raif IlaC Sanayi A.S. (Ikitelli OSB 10, Basaksehir, Istanbul - TR)",SP006910,Active
+510,Takeda de Mexico S.A. de C.V. (Naucalpan de Juarez - MX),SP004992,Active
+511,"Kopran Ltd. (Khopolil, Maharashtra - IN)",SP002393,Active
+512,Wockhardt UK Ltd (Wrexham - UK),SP000159,Active
+513,"Nkunzi Pharmaceuticals (Pty) Ltd. (Wadeville, Germiston - ZA)",SP000459,Active
+514,"PerryHill International Trading (Pty) Ltd. (Linbro Village, Johannesburg - ZA)",SP006090,Active
+515,Macleods Pharmaceuticals Ltd (Daman - IN),SP002598,Active
+516,Glenmark Pharmaceuticals Ltd (Chhatrapati Sambhajinagar - IN),SP008792,Active
+517,NerPharMa Srl (Nerviano - IT),SP000413,Active
+518,Kavis Pharma LLC (Sugar Land - US),SP000058,Active
+519,Sovereign Pharmaceutical LLC (Fort Worth - US),SP003202,Active
+520,"Pharmascience Inc (Montreal, QC - CA)",SP000735,Active
+521,"Packaging Coordinators Inc. (Rockford,IL - US)",SP000795,Active
+522,"Pharma Packaging Solutions (Norris, TN - US)",SP000960,Active
+523,Catalent Health France (Beinheim - FR),SP000747,Active
+524,InfoRLife SA (Switzerland) (Campascio – CH),SP001287,Active
+525,"Halo Pharmaceuticals (Whippany, NJ - US)",SP001378,Active
+526,"ANI Pharmaceuticals, Inc. (Baudette - MN)",SP003051,Active
+527,Recro Gainesville LLC (Gainesville - US),SP005864,Active
+528,"Valeant Canada Ltd (Montreal, QC - CA)",SP000732,Active
+529,"Rockledge Pharmaceutical Manufacturing (Rockledge, FL - US)",SP003766,Active
+530,"Mankind Pharma Limited, (Unit-III : Himachal Pradesh - IN)",SP007156,Active
+531,Sri Krishna Pharmaceuticals Ltd. (Unit-II : Telangana - IN),SP007234,Active
+532,CURIDA AS (Elverum - NO),SP007332,Active
+533,Vergo Pharma Research Laboratories Pvt Ltd (Salcette - IN),SP006954,Active
+534,"Titan Laboratories Pvt Ltd (Dist. Raigad, Maharashtra - IN)",SP001561,Active
+535,Cosmo Pharmaceutical SpA (Lainate - IT),SP007327,Active
+536,Milpharm Ltd (Middlesex - GB),SP002629,Active
+537,CSP (Centre Specialites Pharmaceutiques) (Cournon d Auvergne - FR),SP001596,Active
+538,"Piramal Pharma Ltd (Pithampur, Madhya Pradesh - IN)",SP003820,Active
+539,Cosmepharm (Varennes sur Allier - FR),SP003025,Active
+540,MSN Laboratories Pvt. Ltd. (Formulation Div. Unit 2: Nandigama – IN),SP002480,Active
+541,"Naprod Life Sciences Pvt. Ltd.(Boisar, Dist Thane,Maharashtra IN)",SP001858,Active
+542,Msn Laboratories Pvt Ltd (Unit-I : Telangana - IN),SP000801,Active
+543,"AET Laboratories Pvt Ltd. (Survey 42, Kazipally Industrial Area, Telangana - IN)",SP001524,Active
+544,Prestige Promotion GmbH (Kleinostheim - DE),SP003136,Active
+545,Venus Pharma GmbH (Werne - DE),SP001612,Active
+546,Ethypharm (Chateauneuf en Thymerais - FR),SP000298,Active
+547,Aurobindo Pharma B.V. (Baarn - NL),SP002866,Active
+548,Pharmacin BV ( Zwijndrecht - NL),SP001428,Active
+549,Pharmachemie BV (Haarlem - NL),SP000172,Active
+550,Facta Farmaceutici SpA (Pomezia - IT),SP004303,Active
+551,"Hanson Medical, Inc (Kingston - US)",SP003152,Active
+552,Meda Pharma GmbH & Co KG (Bad Homburg - DE),SP003217,Active
+553,Wessling Hungary Kft (Budapest - HU),SP000155,Active
+554,Oy Medfiles Ltd (Volttikatu - FI),SP001560,Active
+555,Helm AG (Hamburg - DE),SP004733,Active
+556,Alkaloid INT D.O.O. (Ljubljana - SI),SP002828,Active
+557,Pharmadox Healthcare Ltd (Paola - MT),SP002456,Active
+558,Medicoforum GmbH (Hannover - DE),SP000982,Active
+559,Pharos Pharmaceutical Oriented Services (Metamorfossi - GR),SP004204,Active
+560,Eurofins BioPharma Product Testing Budapest Kft. (Budapest - HU),SP004114,Active
+561,BASF AS (Sandefjord - NO),SP002640,Active
+562,Novartis Pharma GmbH (Nurnberg - DE),SP004542,Active
+563,Pronova BioPharma Norge AS (Oslo -NO),SP004504,Active
+564,MEDA Manufacturing GmbH (Cologne),SP000875,Active
+565,Synthon s.r.o. (Blansko),SP000537,Active
+566,Meda Manufacturing Merignac,SP003008,Active
+567,Infarmade SL (Sevilla - ES),SP006845,Active
+568,Celon Pharma S.A. (Lomianki),SP002902,Active
+569,Qualigens Pharma Pvt. Ltd. (Maharashtra - IN),SP004846,Active
+570,Esteve Pharmaceuticals S.A. (Martorelles - ES),SP005260,Active
+571,InfectoPharm and Consilium GmbH (Heppenheim - DE),SP004186,Active
+572,Medochemie (Far East) Ltd (Mot City - VN),SP005462,Active
+573,Sanofi (Tours - FR),SP006009,Active
+574,Sincrofarm SL (Barcelona - ES),SP005005,Active
+575,Fresenius Kabi Austria GmbH (Graz - AT),SP001670,Active
+576,Falorni Srl (Sesto Fiorentino - IT),SP005497,Active
+577,Cipla Ltd (Unit-VI : Verna - IN),SP001414,Active
+578,Drehm Pharma GmBh (Vienna - AT),SP002918,Active
+579,MIAT S.p.A. (Milano - IT),SP002998,Active
+580,Patheon Softgels B.V. (Tilburg - NL),SP004723,Active
+581,Maeda Yakuhin Co Ltd (Toyama-shi - JP),SP000812,Active
+582,Laboratoire Pharmaceutique Pharmatoka (Rueil Malmaison - FR),SP007092,Active
+583,AqVida GmbH (Hamburg - DE),SP006813,Active
+584,Micro Labs Ltd (Goa - IN),SP000704,Active
+585,Micro Labs Ltd (Frankfurt - DE),SP005996,Active
+586,APIS Labor GmbH (Ebenthal - AT),SP006744,Active
+587,CSP (Centre Specialites Pharmaceutiques) (Saint Amant Tallende - FR),SP000213,Active
+588,MPF BV (Oudehaske - NL),SP008145,Active
+589,Medis International as (Prague - CZ),SP008164,Active
+590,Kymos S.L. (Cerdanyola Del Valles - SP),SP002037,Active
+591,Misom Labs Ltd (San Gwann - MT),SP005693,Active
+592,"Noucor Health, S.A. (Barcelona - ES)",SP001092,Active
+593,Pharmadan A/S (Aalestrup - DK),SP008321,Active
+594,S.I.I.T. S.R.L. (Milan - IT),SP000259,Active
+595,BGP Pharma ULC (Etobicoke - CA),SP005142,Active
+596,Sanis Health Inc. (Brampton - CA),SP000968,Active
+597,Sivem Pharmaceuticals ULC (Saint-Laurent - CA),SP003871,Active
+598,"Meridian Medical Technologies Inc (Hermelin Dr : St Louis, MO - US)",SP000562,Active
+599,Alkem Laboratories Limited (Daman - IN),SP008764,Active
+600,KeVaRo GROUP Ltd (Sofia - BG),SP008766,Active
