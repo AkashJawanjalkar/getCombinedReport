@@ -115,7 +115,7 @@
                     <table:Table
                         id="lineItemsTable"
                         rows="{docs>/oModel}"
-                        visibleRowCount="10"
+                        visibleRowCount="12"
                         selectionMode="None"
                         enableColumnReordering="true"
                         enableColumnFreeze="true"
@@ -144,6 +144,20 @@
                             </table:Column>
 
                             <table:Column
+                                width="180px"
+                                visible="true"
+                            >
+                                <Label text="Document Number" />
+                               <table:template>
+    <Link
+        text="{docs>document_number}"
+        press=".onDocumentPress"
+    />
+</table:template>
+
+                            </table:Column>
+
+                            <table:Column
                                 width="150px"
                                 visible="true"
                                 filterProperty="document_companycode"
@@ -164,16 +178,6 @@
                                     <Text
                                         text="{docs>transaction_details_BillingDocumentType}"
                                     />
-                                </table:template>
-                            </table:Column>
-
-                            <table:Column
-                                width="180px"
-                                visible="true"
-                            >
-                                <Label text="Document Number" />
-                                <table:template>
-                                    <Text text="{docs>document_number}" />
                                 </table:template>
                             </table:Column>
 

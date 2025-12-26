@@ -1,0 +1,278 @@
+<mvc:View
+    controllerName="project4.controller.DocumentDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+    displayBlock="true"
+>
+  
+    <Page
+        id="detailPage"
+        title="Billing Document Details"
+    >
+       <customHeader>
+    <Bar>
+        <contentLeft>
+            <Button 
+                 text="Back"
+                press=".onNavBack" 
+            />
+        </contentLeft>
+    </Bar>
+</customHeader>
+
+
+
+        <content>
+            <Panel
+                class="sapUiSmallMarginTop"
+                width="100%"
+                visible="true"
+            >
+            
+                <!-- Header -->
+                <OverflowToolbar>
+                    <Title text="{= 'Items List (' + ${detail>/items}.length + ')' }" />
+                </OverflowToolbar>
+
+                <!-- GRID TABLE -->
+                <table:Table
+                    id="itemsGridTable"
+                    rows="{detail>/items}"
+                    visibleRowCount="10"
+                    selectionMode="None"
+                    enableColumnReordering="true"
+                    enableCellFilter="false"
+                    navigationMode="Scrollbar"
+                    width="100%"
+                    rowHeight="36"
+                    columnHeaderHeight="38"
+                >
+                    <table:columns>
+                        <table:Column
+                         width="200px">
+                            <Label text="Item No" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_item_serial_number}"
+                                />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Product Code" />
+                            <table:template>
+                                <Text text="{detail>item_list_product_code}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Description" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_product_description}"
+                                />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Is Service" />
+                            <table:template>
+                                <Text text="{detail>item_list_is_service}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="HSN Code" />
+                            <table:template>
+                                <Text text="{detail>item_list_hsn_code}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Bar Code" />
+                            <table:template>
+                                <Text text="{detail>item_list_bar_code}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Qty" />
+                            <table:template>
+                                <Text text="{detail>item_list_quantity}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Free Qty" />
+                            <table:template>
+                                <Text text="{detail>item_list_free_quantity}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Unit" />
+                            <table:template>
+                                <Text text="{detail>item_list_unit}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Unit Price" />
+                            <table:template>
+                                <Text text="{detail>item_list_unit_price}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Total Amount" />
+                            <table:template>
+                                <Text text="{detail>item_list_total_amount}" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column
+                         width="200px">
+                            <Label text="Discount" />
+                            <table:template>
+                                <Text text="{detail>item_list_discount}" />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Pre Tax Value" />
+                            <table:template>
+                                <Text text="{detail>item_list_pre_tax_value}" />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Other Charge" />
+                            <table:template>
+                                <Text text="{detail>item_list_other_charge}" />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Assessable Value" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_assessable_value}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="GST Rate" />
+                            <table:template>
+                                <Text text="{detail>item_list_gst_rate}" />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="IGST Amount" />
+                            <table:template>
+                                <Text text="{detail>item_list_igst_amount}" />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="CGST Amount" />
+                            <table:template>
+                                <Text text="{detail>item_list_cgst_amount}" />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="SGST Amount" />
+                            <table:template>
+                                <Text text="{detail>item_list_sgst_amount}" />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="CESS NonAdvol" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_cess_nonadvol_amount}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="CESS Amount" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_cess_cess_amount}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="CESS State" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_cess_state_cess_amount}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Order Line Ref" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_order_line_reference}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Country Origin" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_country_origin}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Product Serial" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_product_serial_number}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Attribute Details" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_attribute_details}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Attribute Value" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_attribute_value}"
+                                />
+                            </table:template>
+                        </table:Column>
+
+                        <table:Column  width="200px">
+                            <Label text="Total Item Value" />
+                            <table:template>
+                                <Text
+                                    text="{detail>item_list_total_item_value}"
+                                />
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
+            </Panel>
+        </content>
+    </Page>
+ 
+</mvc:View>

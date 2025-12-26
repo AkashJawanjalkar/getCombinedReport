@@ -100,7 +100,7 @@
 
                                
                                     <HBox class="sapUiSmallMarginBottom" alignItems="Center">
-                                        <Label text="Billing Document No.:" design="Bold" width="10rem"/>
+                                        <Label text="Billing Document No. :" required="true" design="Bold" width="10rem"/>
                                         <Input id="billingDocumentNoInput" placeholder="Enter Billing Document No." width="20rem"/>
                                     </HBox>
 

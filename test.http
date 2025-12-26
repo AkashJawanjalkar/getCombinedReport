@@ -4,9 +4,80 @@
 ### ######################################################################################################################################
 
 ### Fetch Combined Billing Documents
+# POST http://localhost:4004/odata/v4/apiservice/getCombinedReport
+# Content-Type: application/json
+ 
+# {
+#   "CompanyCode": ["1000","1001"],
+#   "Plant": ["1000","1002"],
+#   "BillingDocType" : ["F2"],
+#   "BillingDocNo": ["9100000298","9100000299","9100000301","9100000302"],
+#   "BillingDateFrom": "2025-01-01",
+#   "BillingDateTo": "2025-12-31",
+#   "Customer":["200341","200341","200058"],
+#   "BusinessPlace":["1001"]
+ 
+#   }
+
+# ### Fetch Combined Billing Documents
+# POST http://localhost:4004/odata/v4/apiservice/getCombinedReport
+# Content-Type: application/json
+
+# {
+#   "CompanyCode": ["1000","1001"],
+#   "Plant": ["1000","1002"],
+#   "BillingDocNo": ["9100000298","9100000299","9100000301","9100000302"],
+#   "BillingDateFrom": "2025-01-01",
+#   "BillingDateTo": "2025-12-31"
+# }
+
+
+# ### Fetch Combined Billing Documents
+# POST http://localhost:4004/odata/v4/apiservice/getCombinedReport
+# Content-Type: application/json
+
+# {
+#   "CompanyCode": ["1000","1001"],
+#   "Plant": ["1000","1002"],
+#   "BillingDocNo": ["9100000298","9100000299","9100000301","9100000302"],
+#   "BillingDateFrom": "2025-01-01",
+#   "BillingDateTo": "2025-12-31"
+# }
+
+
+
+
+### Fetch Combined Billing Documents
 POST http://localhost:4004/odata/v4/apiservice/getCombinedReport
 Content-Type: application/json
- 
+
+{
+  "CompanyCode": ["1000","1001"],
+  "Plant": ["1000","1002"],
+  "BillingDocNo": ["9100000087","9700000003","9500000002","9100000089"],
+  "BillingDateFrom": "2025-02-16",
+  "BillingDateTo": "2025-04-04"
+}
+
+
+
+### Fetch Combined Billing Documents
+POST http://localhost:4004/odata/v4/apiservice/getCombinedReport
+Content-Type: application/json
+
+{
+  "CompanyCode": ["1000","1001"],
+  "Plant": ["1000","1002"],
+  "BillingDocNo": ["9700000003"],
+  "BillingDateFrom": "2025-02-16",
+  "BillingDateTo": "2025-04-04"
+}
+
+
+### Fetch Combined Billing Documents
+POST http://localhost:41265/odata/v4/apiservice/getCombinedReport
+Content-Type: application/json
+
 {
   "CompanyCode": ["1000","1001"],
   "Plant": ["1000","1002"],
@@ -14,34 +85,8 @@ Content-Type: application/json
   "BillingDocNo": ["9100000298","9100000299","9100000301","9100000302"],
   "BillingDateFrom": "2025-01-01",
   "BillingDateTo": "2025-12-31",
-  "Customer":["200341","200341","200058"],
+  "Customer":["200202","200341","200058"],
   "BusinessPlace":["1001"]
- 
-  }
-
-### Fetch Combined Billing Documents
-POST http://localhost:4004/odata/v4/apiservice/getCombinedReport
-Content-Type: application/json
-
-{
-  "CompanyCode": ["1000","1001"],
-  "Plant": ["1000","1002"],
-  "BillingDocNo": ["9100000298","9100000299","9100000301","9100000302"],
-  "BillingDateFrom": "2025-01-01",
-  "BillingDateTo": "2025-12-31"
-}
-
-
-### Fetch Combined Billing Documents
-POST http://localhost:4004/odata/v4/apiservice/getCombinedReport
-Content-Type: application/json
-
-{
-  "CompanyCode": ["1000","1001"],
-  "Plant": ["1000","1002"],
-  "BillingDocNo": ["9100000298","9100000299","9100000301","9100000302"],
-  "BillingDateFrom": "2025-01-01",
-  "BillingDateTo": "2025-12-31"
 }
 
 

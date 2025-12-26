@@ -84,6 +84,7 @@
         "routerClass": "sap.m.routing.Router",
         "controlAggregation": "pages",
         "controlId": "app",
+        
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
@@ -92,24 +93,38 @@
         "viewPath": "project4.view"
       },
       "routes": [
-      {
+    {
         "pattern": "",
         "name": "View1",
-        "target": "View1"
-      },
-      {
+        "target": "View1",
+        "viewLevel": 0
+    },
+    {
         "pattern": "documents",
         "name": "Documents",
-        "target": "Documents"
-      }
-    ],
+        "target": "Documents",
+        "viewLevel": 1
+    },
+    {
+        "pattern": "document/{docId}",
+        "name": "DocumentDetail",
+        "target": "DocumentDetail",
+        "viewLevel": 2
+    }
+]
+,
     "targets": {
       "View1": {
         "viewName": "View1"
       },
       "Documents": {
         "viewName": "Documents"
-      }
+      },
+      "DocumentDetail": {
+  "viewName": "DocumentDetail",
+  "viewType": "XML"
+}
+
     }
     },
     "rootView": {

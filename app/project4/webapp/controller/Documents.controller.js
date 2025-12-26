@@ -96,14 +96,14 @@ sap.ui.define([
             {
                 name: "batch_warranty_date",
                 label: "Batch Warranty Date",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             },
             {
                 name: "batch_expiry_date",
                 label: "Batch Expiry Date",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             },
@@ -205,7 +205,7 @@ sap.ui.define([
             {
                 name: "contact_details_receipt_advice_date",
                 label: "Receipt Advice Date",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             },
@@ -232,7 +232,7 @@ sap.ui.define([
             {
                 name: "contact_details_vendor_po_reference_date",
                 label: "Vendor PO Date",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             },
@@ -314,7 +314,7 @@ sap.ui.define([
             {
                 name: "ewaybill_details_transporter_document_date",
                 label: "Transport Doc Date",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             },
@@ -431,7 +431,7 @@ sap.ui.define([
             {
                 name: "ewaybill_details_ewayBillDate",
                 label: "E-Way Bill Date",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             }
@@ -505,10 +505,10 @@ sap.ui.define([
             {
                 name: "export_details_ship_bill_date",
                 label: "Ship Bill Date",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false,
-                  
+
             },
             {
                 name: "export_details_port_code",
@@ -544,7 +544,7 @@ sap.ui.define([
                 name: "get_invoice_details_AckDt",
                 label: "Ack Date",
                 visible: false,
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
             },
             {
@@ -561,14 +561,14 @@ sap.ui.define([
                 name: "get_eway_bill_details_ewbdt",
                 label: "E-Way Bill Date",
                 visible: false,
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
             },
             {
                 name: "get_eway_bill_details_ewbvalidtill",
                 label: "E-Way Bill Valid Till",
                 visible: false,
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
             },
             {
@@ -797,7 +797,7 @@ sap.ui.define([
                 name: "preceding_document_details_preceding_invoice_date",
                 label: "Preceding Invoice Date",
                 visible: false,
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
             },
             {
@@ -813,14 +813,14 @@ sap.ui.define([
             {
                 name: "reference_details_invoice_period_start_date",
                 label: "Invoice Period Start",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             },
             {
                 name: "reference_details_invoice_period_end_date",
                 label: "Invoice Period End",
-                 type: "DatePicker",
+                type: "DatePicker",
                 groupName: "Dates",
                 visible: false
             },
@@ -1008,29 +1008,103 @@ sap.ui.define([
 
         ],
 
+        // onInit: function () {
+        //     const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+        //     oRouter.getRoute("Documents")
+        //         .attachPatternMatched(this._onRouteMatched, this);
+
+        //     this.getView().setModel(new JSONModel({ oModel: [], nDataLength: 0 }), "docs");
+        //     this._createDynamicFilters();
+
+
+        // },
+
         onInit: function () {
             const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.getRoute("Documents")
                 .attachPatternMatched(this._onRouteMatched, this);
 
-            this.getView().setModel(new JSONModel({ oModel: [], nDataLength: 0 }), "docs");
+            if (!this.getOwnerComponent().getModel("docs")) {
+                this.getOwnerComponent().setModel(
+                    new JSONModel({ oModel: [], nDataLength: 0 }),
+                    "docs"
+                );
+            }
+
             this._createDynamicFilters();
-
-
         },
 
+
+
+
+        // _onRouteMatched: function () {
+        //     this.getView().setBusy(true);
+        //     const oFilterModel = this.getOwnerComponent().getModel("filterModel");
+        //     if (!oFilterModel) {
+        //         console.error("filterModel not found");
+        //         return;
+        //     }
+        //     const oPayload = oFilterModel.getData();
+        //     console.log("Payload received:", oPayload);
+        //     this._callBackend(oPayload);
+        //     this.getView().setBusy(false);
+        // },
+
         _onRouteMatched: function () {
-            this.getView().setBusy(true);
             const oFilterModel = this.getOwnerComponent().getModel("filterModel");
             if (!oFilterModel) {
                 console.error("filterModel not found");
                 return;
             }
-            const oPayload = oFilterModel.getData();
-            console.log("Payload received:", oPayload);
-            this._callBackend(oPayload);
-            this.getView().setBusy(false);
+
+            const oDocsModel = this.getOwnerComponent().getModel("docs");
+
+            // Only fetch if model is empty
+            if (!oDocsModel.getProperty("/oModel").length) {
+                this.getView().setBusy(true);
+                const oPayload = oFilterModel.getData();
+                this._callBackend(oPayload);
+            }
         },
+
+
+
+
+
+        // _callBackend: function (oPayload) {
+        //     const sUrl = this.getView().getModel().sServiceUrl + "getCombinedReport";
+
+        //     BusyIndicator.show(0);
+
+        //     $.ajax({
+        //         url: sUrl,
+        //         method: "POST",
+        //         contentType: "application/json",
+        //         data: JSON.stringify(oPayload),
+
+        //         success: function (oResponse) {
+        //             const oData = oResponse.value || oResponse.result || [];
+        //             console.log("ajax call----------->",oData.Value);
+        //             this.getView().getModel("docs")
+        //                 .setProperty("/oModel", oData);
+
+        //             console.log("Lenght of data : ", oData.length);
+        //             this.getView().getModel("docs")
+        //                 .setProperty("/nDataLength", oData.length);
+
+        //         }.bind(this),
+
+        //         error: function (oError) {
+        //             console.error(oError);
+        //         },
+
+        //         complete: function () {
+        //             BusyIndicator.hide();
+        //         }
+        //     });
+        // },
+
+
 
         _callBackend: function (oPayload) {
             const sUrl = this.getView().getModel().sServiceUrl + "getCombinedReport";
@@ -1045,13 +1119,12 @@ sap.ui.define([
 
                 success: function (oResponse) {
                     const oData = oResponse.value || oResponse.result || [];
-                    this.getView().getModel("docs")
-                        .setProperty("/oModel", oData);
+                    const oDocsModel = this.getOwnerComponent().getModel("docs");
 
-                    console.log("Lenght of data : ", oData.length);
-                    this.getView().getModel("docs")
-                        .setProperty("/nDataLength", oData.length);
+                    oDocsModel.setProperty("/oModel", oData);
+                    oDocsModel.setProperty("/nDataLength", oData.length);
 
+                    console.log("Data loaded:", oData.length);
                 }.bind(this),
 
                 error: function (oError) {
@@ -1060,10 +1133,10 @@ sap.ui.define([
 
                 complete: function () {
                     BusyIndicator.hide();
-                }
+                    this.getView().setBusy(false);
+                }.bind(this)
             });
         },
-
 
 
         formatDate: function (sDate) {
@@ -1094,7 +1167,7 @@ sap.ui.define([
                     });
                 });
 
-               
+
 
                 this._oSelectAll = new CheckBox({
                     text: "Select All",
@@ -1144,7 +1217,7 @@ sap.ui.define([
 
 
 
-        
+
 
         _updateSelectedCount: function () {
             const iCount = this._oList.getItems().filter(i => i.getSelected()).length;
@@ -1163,131 +1236,54 @@ sap.ui.define([
 
 
 
-        //////////////////filters//////////////
-
-        // _syncFilterBarWithColumns: function () {
-        //     var oTable = this.byId("lineItemsTable");
-        //     var oFilterBar = this.byId("filterBar");
-
-        //     if (!oTable || !oFilterBar) return;
-
-        //     var aColumns = oTable.getColumns();
-        //     var aFilterItems = oFilterBar.getFilterItems();
-
-        //     var mExisting = {};
-        //     aFilterItems.forEach(function (oItem) {
-        //         mExisting[oItem.getName()] = oItem;
-        //     });
-
-        //     aColumns.forEach(function (oCol) {
-        //         if (!oCol.getVisible()) return;
-
-        //         var sPath = oCol.getSortProperty() || oCol.getFilterProperty();
-        //         if (!sPath) return;
-
-        //         if (!mExisting[sPath]) {
-        //             var oInput = new Input({
-        //                 liveChange: this._applyFilters.bind(this)
-        //             });
-
-        //             var oFilterItem = new FilterItem({
-        //                 name: sPath,
-        //                 label: oCol.getLabel().getText(),
-        //                 control: oInput
-        //             });
-
-        //             oFilterBar.addFilterItem(oFilterItem);
-        //         } else {
-        //             delete mExisting[sPath];
-        //         }
-        //     }.bind(this));
-
-
-        //     Object.keys(mExisting).forEach(function (sKey) {
-        //         oFilterBar.removeFilterItem(mExisting[sKey]);
-        //         mExisting[sKey].destroy();
-        //     });
-        // },
-        // _applyFilters: function () {
-        //     const oTable = this.byId("lineItemsTable");
-        //     if (!oTable) return;
-
-        //     const oBinding = oTable.getBinding("rows");
-        //     if (!oBinding) return;
-
-        //     const oFilterBar = this.byId("filterBar");
-        //     const aFilters = [];
-
-        //     if(!oFilterBar){
-        //        this.getView().getModel("docs")
-        //                 .setProperty("/nDataLength", oBinding.length);  
-        //     }
-
-        //     oFilterBar.getFilterItems().forEach(oItem => {
-        //         const sPath = oItem.getName();
-        //         const sValue = oItem.getControl().getValue();
-
-        //         if (sValue) {
-        //             aFilters.push(new Filter(
-        //                 sPath,
-        //                 FilterOperator.Contains,
-        //                 sValue
-        //             ));
-        //         }
-        //     });
-        //         console.log("lengthafterfilter--->",aFilters.length);
-        //           this.getView().getModel("docs")
-        //                 .setProperty("/nDataLength", aFilters.length);
-        //     oBinding.filter(aFilters);
-        // },
 
 
         _applyFilters: function () {
-    const oTable = this.byId("lineItemsTable");
-    if (!oTable) return;
+            const oTable = this.byId("lineItemsTable");
+            if (!oTable) return;
 
-    const oBinding = oTable.getBinding("rows");
-    if (!oBinding) return;
+            const oBinding = oTable.getBinding("rows");
+            if (!oBinding) return;
 
-    const oFilterBar = this.byId("filterBar");
-    const aFilters = [];
+            const oFilterBar = this.byId("filterBar");
+            const aFilters = [];
 
-    if (!oFilterBar) {
-        const aAllData = oBinding.getContexts();
-        this.getView().getModel("docs").setProperty("/nDataLength", aAllData.length);
-        return;
-    }
-
-    oFilterBar.getFilterItems().forEach(oItem => {
-        const sPath = oItem.getName();
-        const oControl = oItem.getControl();
-        const sValue = oControl.getValue();
-
-        if (sValue) {
-            let oFilter;
-
-            if (oControl instanceof sap.m.DatePicker) {
-                // Convert YYYY-MM-DD to /Date(millis)/ format
-                const oDate = new Date(sValue);
-                const iMillis = oDate.getTime();
-                const sFormatted = `/Date(${iMillis})/`;
-
-                oFilter = new sap.ui.model.Filter(sPath, sap.ui.model.FilterOperator.EQ, sFormatted);
-            } else {
-                oFilter = new sap.ui.model.Filter(sPath, sap.ui.model.FilterOperator.Contains, sValue);
+            if (!oFilterBar) {
+                const aAllData = oBinding.getContexts();
+                this.getView().getModel("docs").setProperty("/nDataLength", aAllData.length);
+                return;
             }
 
-            aFilters.push(oFilter);
+            oFilterBar.getFilterItems().forEach(oItem => {
+                const sPath = oItem.getName();
+                const oControl = oItem.getControl();
+                const sValue = oControl.getValue();
+
+                if (sValue) {
+                    let oFilter;
+
+                    if (oControl instanceof sap.m.DatePicker) {
+                        // Convert YYYY-MM-DD to /Date(millis)/ format
+                        const oDate = new Date(sValue);
+                        const iMillis = oDate.getTime();
+                        const sFormatted = `/Date(${iMillis})/`;
+
+                        oFilter = new sap.ui.model.Filter(sPath, sap.ui.model.FilterOperator.EQ, sFormatted);
+                    } else {
+                        oFilter = new sap.ui.model.Filter(sPath, sap.ui.model.FilterOperator.Contains, sValue);
+                    }
+
+                    aFilters.push(oFilter);
+                }
+            });
+
+            oBinding.filter(aFilters);
+
+            const aFilteredData = oBinding.getContexts();
+            this.getView().getModel("docs").setProperty("/nDataLength", aFilteredData.length);
+            console.log("Filtered record count --->", aFilteredData.length);
         }
-    });
-
-    oBinding.filter(aFilters);
-
-    const aFilteredData = oBinding.getContexts();
-    this.getView().getModel("docs").setProperty("/nDataLength", aFilteredData.length);
-    console.log("Filtered record count --->", aFilteredData.length);
-}
-,
+        ,
 
 
         _createDynamicFilters: function () {
@@ -1321,7 +1317,20 @@ sap.ui.define([
 
 
             });
+        },
+        onDocumentPress: function (oEvent) {
+            const oCtx = oEvent.getSource().getBindingContext("docs");
+            const sDocId = oCtx.getProperty("document_number");
+
+            sap.ui.core.UIComponent
+                .getRouterFor(this)
+                .navTo("DocumentDetail", {
+                    docId: sDocId
+                });
         }
+
+
+
 
 
 
